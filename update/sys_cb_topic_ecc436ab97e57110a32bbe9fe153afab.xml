@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>Topic creation for learning - delete this</description>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.41",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "08ebf0baca2d4821b8a8ddf49798971f": {
+          "id": "08ebf0baca2d4821b8a8ddf49798971f",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "0f2bf5dfec58442fa655a457acde7834": {
+          "id": "0f2bf5dfec58442fa655a457acde7834",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cd9b155a0e8f43c18baf59ea1c7eacb1": {
+          "id": "cd9b155a0e8f43c18baf59ea1c7eacb1",
+          "stepType": "Prompt",
+          "name": "welcome dialogue",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Enter your name"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "User"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "a9842495c8e04220a962f6861d18ca79",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "d94c4e1ae23f4f57aad20f973399a448": {
+          "id": "d94c4e1ae23f4f57aad20f973399a448",
+          "stepType": "TextOutput",
+          "name": "Response",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Dear "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.welcome_dialogue}}",
+                        "displayValue": "Input Variables➛Welcome Dialogue"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", Welcome buddy."
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "af8475bf535c4bfe8c7b992a95cd95ec"
+            }
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "12e37f2e4fa74cf79d6333189fc4c8e2",
+          "edgeType": "Edge",
+          "source": "08ebf0baca2d4821b8a8ddf49798971f",
+          "target": "cd9b155a0e8f43c18baf59ea1c7eacb1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "71907577564543a88fdc32f476040e6e",
+          "edgeType": "Edge",
+          "source": "cd9b155a0e8f43c18baf59ea1c7eacb1",
+          "target": "d94c4e1ae23f4f57aad20f973399a448",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b91aff158bc94eeca3eda898a42c89f8",
+          "edgeType": "Edge",
+          "source": "d94c4e1ae23f4f57aad20f973399a448",
+          "target": "0f2bf5dfec58442fa655a457acde7834",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "a9842495c8e04220a962f6861d18ca79": {
+      "id": "a9842495c8e04220a962f6861d18ca79",
+      "name": "welcome_dialogue",
+      "label": "Welcome Dialogue",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY5NjQwNjM3Mzg2OCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    }
+  }
+}</graph>
+        <key_phrases>delete this topic 1</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>delete this topic 1</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-04 07:59:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>ecc436ab97e57110a32bbe9fe153afab</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>delete this topic 1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_ecc436ab97e57110a32bbe9fe153afab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-04 08:07:17</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=ecc436ab97e57110a32bbe9fe153afab"/>
+</record_update>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="delete this topic 1">3ee5faeb97e57110a32bbe9fe153aff6</compiled_topic>
+        <design_definition>{"type":"FlowTopic","type":"FlowTopic","triggers":[{"type":"Trigger","name":"0a7d947edb1c4896905d78793743210a","triggerType":"request","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"id":"0a7d947edb1c4896905d78793743210a"}],"goals":[{"name":"primary","trigger_id":"0a7d947edb1c4896905d78793743210a","nodes":[{"type":"StartGoal","type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","type":"String","mode":"string","value":""},"id":"08ebf0baca2d4821b8a8ddf49798971f","name":"Start"},{"type":"TerminateGoal","type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","type":"String","mode":"string","value":""},"id":"0f2bf5dfec58442fa655a457acde7834","name":"End"},{"type":"InputPrompt","type":"InputPrompt","variable_id":"a9842495c8e04220a962f6861d18ca79","message":{"type":"String","type":"String","mode":"string","value":"gs.getMessageLang(\"Enter your name\", vaContext.getRequesterLang())"},"default_value":{"type":"String","type":"String","mode":"string","value":"gs.getMessageLang(\"User\", vaContext.getRequesterLang())"},"nlu_entity_binding":{"type":"NLUEntityBinding","allow_text_input":false,"use_confirmation_prompt":true},"skippable":{"type":"Applicability","type":"Applicability","mode":"script","value":"false"},"id":"cd9b155a0e8f43c18baf59ea1c7eacb1","name":"welcome dialogue","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"formatType":"Text","validationScript":""},{"type":"TextOutputPrompt","type":"TextOutputPrompt","value":[{"type":"String","type":"String","mode":"string","value":"gs.getMessageLang(\"Dear {0}, Welcome\", vaContext.getRequesterLang(), [vaInputs.user])"}],"id":"d94c4e1ae23f4f57aad20f973399a448","name":"Response","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"secure":false}],"edges":[{"type":"Edge","source_node_id":"08ebf0baca2d4821b8a8ddf49798971f","target_node_id":"cd9b155a0e8f43c18baf59ea1c7eacb1","id":"12e37f2e4fa74cf79d6333189fc4c8e2"},{"type":"Edge","source_node_id":"cd9b155a0e8f43c18baf59ea1c7eacb1","target_node_id":"d94c4e1ae23f4f57aad20f973399a448","id":"71907577564543a88fdc32f476040e6e"},{"type":"Edge","source_node_id":"d94c4e1ae23f4f57aad20f973399a448","target_node_id":"0f2bf5dfec58442fa655a457acde7834","id":"b91aff158bc94eeca3eda898a42c89f8"}],"id":"primary"}],"script_variables":[],"glide_variables":[{"type":"Reference","type":"Reference","table":"sys_user","id":"current-user","name":"user","formatType":"text","secure":false,"sensitive":false,"list":false},{"type":"VariableDto","type":"String","name":"welcome_dialogue","list":false,"id":"a9842495c8e04220a962f6861d18ca79","formatType":"Text","validationScript":"","secure":false,"sensitive":false}],"applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"roles":[],"scope":"6ead8e780f603200cd674f8ce1050ed1","domain":"global","topic_type":"STANDARD","channels":[],"id":"ecc436ab97e57110a32bbe9fe153afab","name":"delete this topic 1","key_phrases":["delete this topic 1"],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":false,"autopilot_topic":false,"design_categories":[],"triggerable_by_notification":false,"library":false,"readOnly":false,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>ecc436ab97e57110a32bbe9fe153afab</design_topic_id>
+        <graph>{
+  "graph_api_version": "1.0.41",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "08ebf0baca2d4821b8a8ddf49798971f": {
+          "id": "08ebf0baca2d4821b8a8ddf49798971f",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "0f2bf5dfec58442fa655a457acde7834": {
+          "id": "0f2bf5dfec58442fa655a457acde7834",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "cd9b155a0e8f43c18baf59ea1c7eacb1": {
+          "id": "cd9b155a0e8f43c18baf59ea1c7eacb1",
+          "stepType": "Prompt",
+          "name": "welcome dialogue",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Enter your name"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "User"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "a9842495c8e04220a962f6861d18ca79",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "d94c4e1ae23f4f57aad20f973399a448": {
+          "id": "d94c4e1ae23f4f57aad20f973399a448",
+          "stepType": "TextOutput",
+          "name": "Response",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Dear "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user}}",
+                        "displayValue": "Input Variables➛User"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", Welcome"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "af8475bf535c4bfe8c7b992a95cd95ec"
+            }
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "12e37f2e4fa74cf79d6333189fc4c8e2",
+          "edgeType": "Edge",
+          "source": "08ebf0baca2d4821b8a8ddf49798971f",
+          "target": "cd9b155a0e8f43c18baf59ea1c7eacb1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "71907577564543a88fdc32f476040e6e",
+          "edgeType": "Edge",
+          "source": "cd9b155a0e8f43c18baf59ea1c7eacb1",
+          "target": "d94c4e1ae23f4f57aad20f973399a448",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b91aff158bc94eeca3eda898a42c89f8",
+          "edgeType": "Edge",
+          "source": "d94c4e1ae23f4f57aad20f973399a448",
+          "target": "0f2bf5dfec58442fa655a457acde7834",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "a9842495c8e04220a962f6861d18ca79": {
+      "id": "a9842495c8e04220a962f6861d18ca79",
+      "name": "welcome_dialogue",
+      "label": "Welcome Dialogue",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY5NjQwNjM3Mzg2OCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    }
+  }
+}</graph>
+        <name>delete this topic 1</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-04 08:04:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>36e5faeb97e57110a32bbe9fe153affb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_design_topic_36e5faeb97e57110a32bbe9fe153affb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-04 08:04:16</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>
